@@ -28,34 +28,18 @@
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-.web_container {
-  margin: 0 auto;
-}
-
 body {
   background: #f4f4f4;
   position: relative;
-}
-
-.color_header {
-  background: #1abc9c;
 }
 
 .color_navbar {
   background-color: #34495e;
 }
 
-.flex {
-  display: flex;
-}
-
 .custom_header {
   padding: 10px 20px;
   display: flex;
-}
-
-.full_width {
-  width: 100%;
 }
 
 .color_footer {
@@ -212,26 +196,92 @@ a {
   }
 }
 
-.next-icon
-{
-  content: '>';
+.next-icon {
+  content: ">";
   font-size: 55px;
   color: black;
 }
 
 .prev-icon {
-  content: '<';
+  content: "<";
   font-size: 55px;
   color: black;
 }
 
 #imgResize {
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 100%;
-  margin: auto;
   cursor: pointer;
 }
 
 #imgResize:hover {
-  box-shadow: 0 0 8px #1abc9c;    
+  box-shadow: 0 0 8px #1abc9c;
 }
 /* TOP ITEMS */
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.myBanners {
+  display: none;
+}
+
+.myBanners img {
+  vertical-align: middle;
+}
+
+.slide-right-left {
+  -webkit-animation-name: righttoleft;
+  -webkit-animation-duration: 1.5s;
+  animation-name: righttoleft;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes righttoleft {
+  100%{
+    transform: translateX(0);
+  }
+  0%{
+    transform: translateX(1000px);
+  }
+}
+
+@keyframes righttoleft {
+  100%{
+    transform: translateX(0);
+  }
+  0%{
+    transform: translateX(1000px);
+  }
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(255,255,255,0.8);
+}
